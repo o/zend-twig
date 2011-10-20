@@ -38,7 +38,7 @@ class App_Resource_Twig extends Zend_Application_Resource_View {
                             APPLICATION_PATH . '/views/scripts',
                             $this->getOptions()
             );
-            Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->setView($view)->setViewSuffix('twig');
+            Zend_Controller_Action_HelperBroker::getStaticHelper('viewRenderer')->setView($view)->setViewSuffix('twig')->setViewBasePathSpec(':moduleDir/views/scripts');
             $this->_view = $view;
         }
         return $this->_view;
